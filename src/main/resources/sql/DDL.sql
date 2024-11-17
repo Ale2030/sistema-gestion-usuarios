@@ -11,6 +11,7 @@ DROP TABLE IF EXISTS roles;
 
 DROP TABLE IF EXISTS logs_auditoria;
 
+DROP TABLE IF EXISTS usuarios_roles;
 
 CREATE TABLE usuarios(
     id_usuario INT AUTO_INCREMENT PRIMARY KEY,

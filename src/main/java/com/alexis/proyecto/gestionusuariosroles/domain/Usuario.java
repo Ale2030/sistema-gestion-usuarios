@@ -1,6 +1,4 @@
-package com.alexis.proyecto.gestionusuariosroles.models;
-
-import com.alexis.proyecto.gestionusuariosroles.enums.Roles;
+package com.alexis.proyecto.gestionusuariosroles.domain;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -20,8 +18,6 @@ public class Usuario {
     private String nombre;
     private String email;
     private String password;
-    @Enumerated(EnumType.STRING)
-    private Roles rol;
     private boolean activo = true;
     @Column(name = "fecha_creacion", updatable = false, nullable = false)
     private java.sql.Timestamp fechaCreacion; 

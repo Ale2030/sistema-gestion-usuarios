@@ -5,7 +5,8 @@ import java.sql.ResultSet;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-import com.alexis.proyecto.gestionusuariosroles.connector.Connector;
+
+import com.alexis.proyecto.gestionusuariosroles.connectors.Connector;
 
 @SpringBootTest
 public class TestConnector {

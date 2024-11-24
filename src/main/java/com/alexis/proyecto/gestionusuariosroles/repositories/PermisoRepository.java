@@ -3,9 +3,11 @@ package com.alexis.proyecto.gestionusuariosroles.repositories;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.alexis.proyecto.gestionusuariosroles.domain.Usuario;
+import com.alexis.proyecto.gestionusuariosroles.domain.Permiso;
+
+
 
 @Repository
-public interface UsuarioRepository extends CrudRepository<Usuario, Integer> {
+public interface PermisoRepository extends CrudRepository<Permiso, Integer> {
 
 }

@@ -1,5 +1,4 @@
-package com.alexis.proyecto.gestionusuariosroles.models;
-import com.alexis.proyecto.gestionusuariosroles.enums.Roles;
+package com.alexis.proyecto.gestionusuariosroles.domain;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -10,11 +9,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name="roles")
-public class Rol {
+@Table(name="usuarios_roles")
+public class UsuarioRol {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
+    private int id_usuario;
     private int id_rol;
-    private Roles nombreRoles;
 }

@@ -26,4 +26,7 @@ Este proyecto es un sistema de administración para gestionar usuarios y roles. 
    ```bash
    git clone https://github.com/tu-usuario/nombre-del-repositorio.git
 2. Cambia los valores a los archivos application.properties,Connector.java.
-   
+
+## Diagrama ER
+Puedes consultar el diagrama ER del proyecto [aquí](docs/diagrama-er.png).
+

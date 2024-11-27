@@ -14,6 +14,6 @@ public class UsuarioRol {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
-    private int id_usuario;
-    private int id_rol;
+    private Integer id_usuario;
+    private Integer id_rol;
 }

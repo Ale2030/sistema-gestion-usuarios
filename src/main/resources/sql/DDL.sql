@@ -68,4 +68,3 @@ ALTER TABLE logs_auditoria
     ADD CONSTRAINT fk_usuario_logs
     FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario)
     ON DELETE CASCADE;
-    

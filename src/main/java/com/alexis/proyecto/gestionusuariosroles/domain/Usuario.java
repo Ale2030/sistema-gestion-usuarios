@@ -13,14 +13,18 @@ import lombok.NoArgsConstructor;
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(unique = true, nullable = false)
-    private int id_usuario;
+    @Column(name = "id_usuario")
+    private Integer idUsuario;
+
+    @Column(name = "nombre", nullable = false)
     private String nombre;
+
+    @Column(name = "email", nullable = false, unique = true)
     private String email;
+
+    @Column(name = "password", nullable = false)
     private String password;
-    private boolean activo = true;
-    @Column(name = "fecha_creacion", updatable = false, nullable = false)
-    private java.sql.Timestamp fechaCreacion; 
-    @Column(name = "fecha_actualizacion", insertable = false)
-    private java.sql.Timestamp fechaActualizacion;
+
+    @Column(name = "activo", nullable = false)
+    private Boolean activo;
 }

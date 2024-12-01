@@ -1,12 +1,10 @@
 package com.alexis.proyecto.gestionusuariosroles.services.impl;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.alexis.proyecto.gestionusuariosroles.domain.Rol;
 import com.alexis.proyecto.gestionusuariosroles.domain.UsuarioRol;
 import com.alexis.proyecto.gestionusuariosroles.repositories.UsuarioRolRepository;
 import com.alexis.proyecto.gestionusuariosroles.services.UsuarioRolService;
@@ -48,7 +46,7 @@ public class UsuarioRolServiceImpl implements UsuarioRolService {
                 .filter(usuarioRol -> idUser.contains(usuarioRol.getId_rol()))
                 .toList();
         return user;
-       
+
     }
 
 }

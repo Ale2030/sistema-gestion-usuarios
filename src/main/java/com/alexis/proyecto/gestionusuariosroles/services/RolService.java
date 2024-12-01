@@ -5,6 +5,7 @@ import java.util.List;
 import com.alexis.proyecto.gestionusuariosroles.domain.Rol;
 
 public interface RolService {
-    List<Rol>getRoles();
-    List<Integer>getRolesByNombreRol(String nombre);
+    List<Rol> getRoles();
+
+    List<Integer> getRolesByNombreRol(String nombre);
 }

@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.alexis.proyecto.gestionusuariosroles.domain.Rol;
 
 @Repository
-public interface RolRepository extends CrudRepository<Rol,Integer> {
-    
+public interface RolRepository extends CrudRepository<Rol, Integer> {
+
 }

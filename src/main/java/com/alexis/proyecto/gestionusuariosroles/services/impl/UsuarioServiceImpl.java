@@ -10,15 +10,15 @@ import com.alexis.proyecto.gestionusuariosroles.repositories.UsuarioRepository;
 import com.alexis.proyecto.gestionusuariosroles.services.UsuarioService;
 
 @Service
-public class UsuarioServiceImpl implements UsuarioService{
+public class UsuarioServiceImpl implements UsuarioService {
 
-    @Autowired
-    private UsuarioRepository ur;
+  @Autowired
+  private UsuarioRepository ur;
 
-    @Override
-    public List<Usuario> getUsuarios() {
-      List<Usuario> usuarios =  (List<Usuario>)ur.findAll();
-        return usuarios;
-    }
-    
+  @Override
+  public List<Usuario> getUsuarios() {
+    List<Usuario> usuarios = (List<Usuario>) ur.findAll();
+    return usuarios;
+  }
+
 }

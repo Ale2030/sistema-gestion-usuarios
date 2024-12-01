@@ -1,4 +1,5 @@
 package com.alexis.proyecto.gestionusuariosroles.domain;
+
 import com.alexis.proyecto.gestionusuariosroles.enums.Accion;
 
 import jakarta.persistence.*;
@@ -10,7 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name="logs_auditoria")
+@Table(name = "logs_auditoria")
 public class LogAuditoria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,5 +21,5 @@ public class LogAuditoria {
     private Accion accion;
     private String tabla_afectada;
     @Column(name = "fecha_creacion", updatable = false, nullable = false)
-    private java.sql.Timestamp fechaCreacion; 
+    private java.sql.Timestamp fechaCreacion;
 }

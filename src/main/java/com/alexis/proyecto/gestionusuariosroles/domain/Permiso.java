@@ -1,4 +1,5 @@
 package com.alexis.proyecto.gestionusuariosroles.domain;
+
 import com.alexis.proyecto.gestionusuariosroles.enums.Accion;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -9,7 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name="permisos")
+@Table(name = "permisos")
 public class Permiso {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

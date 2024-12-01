@@ -1,5 +1,7 @@
 package com.alexis.proyecto.gestionusuariosroles.domain;
 
+import java.util.List;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,22 +11,17 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name="usuarios")
+@Table(name = "usuarios")
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_usuario")
-    private Integer idUsuario;
-
-    @Column(name = "nombre", nullable = false)
+    private int idUsuario;
     private String nombre;
-
-    @Column(name = "email", nullable = false, unique = true)
     private String email;
-
-    @Column(name = "password", nullable = false)
     private String password;
+    private boolean activo;
 
-    @Column(name = "activo", nullable = false)
-    private Boolean activo;
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "usuarios_roles", joinColumns = @JoinColumn(name = "id_usuario"), inverseJoinColumns = @JoinColumn(name = "id_rol"))
+    private List<Rol> roles;
 }

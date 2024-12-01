@@ -5,7 +5,9 @@ import java.util.List;
 import com.alexis.proyecto.gestionusuariosroles.domain.UsuarioRol;
 
 public interface UsuarioRolService {
-    List<UsuarioRol>getUsuarioRolServices();
-    List<UsuarioRol>getAdmin();
-    List<UsuarioRol>getUser();
+    List<UsuarioRol> getUsuarioRolServices();
+
+    List<UsuarioRol> getAdmin();
+
+    List<UsuarioRol> getUser();
 }

@@ -16,7 +16,7 @@ import com.alexis.proyecto.gestionusuariosroles.services.impl.UsuarioServiceImpl
 @Controller
 @RequestMapping("/usuarios")
 public class UsuarioController {
-    
+
     @Autowired
     private UsuarioServiceImpl usr;
 
@@ -24,19 +24,22 @@ public class UsuarioController {
     private UsuarioRolServiceImpl ursi;
 
     @GetMapping
-    public ResponseEntity<List<Usuario>> getUsuarios(){
+    public ResponseEntity<List<Usuario>> getUsuarios() {
         return ResponseEntity.ok(usr.getUsuarios());
     }
+
     @GetMapping("/usuariorol")
-    public ResponseEntity<List<UsuarioRol>> getUsuarioRol(){
+    public ResponseEntity<List<UsuarioRol>> getUsuarioRol() {
         return ResponseEntity.ok(ursi.getUsuarioRolServices());
     }
+
     @GetMapping("/admin")
-    public ResponseEntity<List<UsuarioRol>> getAdmin(){
+    public ResponseEntity<List<UsuarioRol>> getAdmin() {
         return ResponseEntity.ok(ursi.getAdmin());
     }
+
     @GetMapping("/user")
-    public ResponseEntity<List<UsuarioRol>> getUser(){
+    public ResponseEntity<List<UsuarioRol>> getUser() {
         return ResponseEntity.ok(ursi.getUser());
     }
 

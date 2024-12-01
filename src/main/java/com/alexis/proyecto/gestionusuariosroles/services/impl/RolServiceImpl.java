@@ -10,7 +10,7 @@ import com.alexis.proyecto.gestionusuariosroles.repositories.RolRepository;
 import com.alexis.proyecto.gestionusuariosroles.services.RolService;
 
 @Service
-public class RolServiceImpl  implements RolService{
+public class RolServiceImpl implements RolService {
 
     @Autowired
     private RolRepository rr;
@@ -18,18 +18,18 @@ public class RolServiceImpl  implements RolService{
     @Override
     public List<Rol> getRoles() {
         List<Rol> roles = (List<Rol>) rr.findAll();
-        return  roles;
+        return roles;
     }
 
     @Override
     public List<Integer> getRolesByNombreRol(String nombre) {
         List<Rol> roles = (List<Rol>) rr.findAll();
         List<Integer> idRol = roles
-        .stream()
-        .filter(rol -> rol.getNombre_rol().equals(nombre))
-        .map(Rol::getId_rol)
-        .toList();
+                .stream()
+                .filter(rol -> rol.getNombre_rol().equals(nombre))
+                .map(Rol::getId_rol)
+                .toList();
         return idRol;
     }
-    
+
 }

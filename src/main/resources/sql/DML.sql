@@ -1,8 +1,8 @@
 -- Active: 1714186397700@@127.0.0.1@3306@usuarios_y_roles_db
 INSERT INTO usuarios (nombre, email, password, activo)
 VALUES
-    ('Juan Pérez', 'juan.perez@example.com', '$2a$10$JGQfgNq4szJ7OZuNLjLh0OLvxjqLhpNmbZVc8Pvk/gKXYYjLoqjnK', TRUE),
-    ('Ana García', 'ana.garcia@example.com', 'password1243', TRUE),
+    ('Juan Pérez', 'juan@example.com', '$2y$10$YBiQPUbhN7r31zUq61H6yO8QtjwU4PpN9qW4dqNvBNZuZwoedi0xy', TRUE),
+    ('Ana García', 'anagarcia@example.com', '$2y$10$dCbk.kavmoqWGL5Wr3d4FuL8KGTrRTAbp7yfUzNsiEKBpzxisXbsS', TRUE),
     ('Luis Martínez', 'luis.martinez@example.com', 'password1523', TRUE),
     ('María López', 'maria.lopez@example.com', 'password1273', TRUE),
     ('Carlos Sánchez', 'carlos.sanchez@example.com', 'password1823', TRUE),

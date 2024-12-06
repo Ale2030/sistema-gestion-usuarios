@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,7 +15,7 @@ import com.alexis.proyecto.gestionusuariosroles.services.impl.UsuarioRolServiceI
 import com.alexis.proyecto.gestionusuariosroles.services.impl.UsuarioServiceImpl;
 
 @Controller
-@RequestMapping("/usuarios")
+@RequestMapping("/usuario")
 public class UsuarioController {
 
     @Autowired
@@ -23,24 +24,22 @@ public class UsuarioController {
     @Autowired
     private UsuarioRolServiceImpl ursi;
 
-    @GetMapping
-    public ResponseEntity<List<Usuario>> getUsuarios() {
-        return ResponseEntity.ok(usr.getUsuarios());
+    @GetMapping("/admin/dashboard")
+    public String adminDashboard(Authentication authentication) {
+        if (authentication.getAuthorities().stream()
+                .anyMatch(auth -> auth.getAuthority().equals("admin"))) {
+            return "admin-dashboard";
+        }
+        return "redirect:/access-denied";
     }
 
-    @GetMapping("/usuariorol")
-    public ResponseEntity<List<UsuarioRol>> getUsuarioRol() {
-        return ResponseEntity.ok(ursi.getUsuarioRolServices());
-    }
-
-    @GetMapping("/admin")
-    public ResponseEntity<List<UsuarioRol>> getAdmin() {
-        return ResponseEntity.ok(ursi.getAdmin());
-    }
-
-    @GetMapping("/user")
-    public ResponseEntity<List<UsuarioRol>> getUser() {
-        return ResponseEntity.ok(ursi.getUser());
+    @GetMapping("/dashboard")
+    public String userDashboard(Authentication authentication) {
+        if (authentication.getAuthorities().stream()
+                .anyMatch(auth -> auth.getAuthority().equals("user"))) {
+            return "usuario-dashboard";
+        }
+        return "redirect:/access-denied";
     }
 
 }

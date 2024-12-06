@@ -11,23 +11,27 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
 import lombok.AllArgsConstructor;
+
 @AllArgsConstructor
 @Configuration
 public class SecurityConfig {
 
     private final CustomUserDetailsService customUserDetailsService;
+    private final CustomAuthenticationSuccessHandler customAuthenticationSuccessHandler;
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/login", "/resources/**").permitAll()
+                        .requestMatchers("/admin/**").hasAuthority("admin")
+                        .requestMatchers("/user/**").hasAuthority("user")
                         .anyRequest().authenticated())
                 .formLogin(form -> form
                         .usernameParameter("email")
                         .passwordParameter("password")
                         .loginPage("/login")
-                        .defaultSuccessUrl("/index", true)
+                        .successHandler(customAuthenticationSuccessHandler)
                         .failureUrl("/login?error=true")
                         .permitAll())
                 .logout(logout -> logout

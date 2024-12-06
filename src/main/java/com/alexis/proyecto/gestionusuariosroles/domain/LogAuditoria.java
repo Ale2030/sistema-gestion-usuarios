@@ -1,25 +1,37 @@
 package com.alexis.proyecto.gestionusuariosroles.domain;
 
-import com.alexis.proyecto.gestionusuariosroles.enums.Accion;
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
+import com.alexis.proyecto.gestionusuariosroles.enums.Accion;
+
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "logs_auditoria")
 public class LogAuditoria {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(unique = true, nullable = false)
-    private int id_log;
-    private int id_usuario;
+    private Integer idLog;
+
+    @ManyToOne
+    @JoinColumn(name = "id_usuario", nullable = false)
+    private Usuario usuario;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private Accion accion;
-    private String tabla_afectada;
-    @Column(name = "fecha_creacion", updatable = false, nullable = false)
-    private java.sql.Timestamp fechaCreacion;
+
+    @Column(name = "tabla_afectada", length = 100, nullable = false)
+    private String tablaAfectada;
+
+    @Column(name = "fecha_accion")
+    private LocalDateTime fechaAccion;
+
 }

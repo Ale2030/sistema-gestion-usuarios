@@ -26,27 +26,14 @@ public class UsuarioRolServiceImpl implements UsuarioRolService {
 
     @Override
     public List<UsuarioRol> getAdmin() {
-        List<Integer> idAdmin = rsi.getRolesByNombreRol("admin");
-        List<UsuarioRol> usuarioRols = (List<UsuarioRol>) urr.findAll();
-
-        List<UsuarioRol> admin = usuarioRols
-                .stream()
-                .filter(usuarioRol -> idAdmin.contains(usuarioRol.getId_rol()))
-                .toList();
-        return admin;
+        // TODO Auto-generated method stub
+        return null;
     }
 
     @Override
     public List<UsuarioRol> getUser() {
-        List<Integer> idUser = rsi.getRolesByNombreRol("user");
-        List<UsuarioRol> usuarioRols = (List<UsuarioRol>) urr.findAll();
-
-        List<UsuarioRol> user = usuarioRols
-                .stream()
-                .filter(usuarioRol -> idUser.contains(usuarioRol.getId_rol()))
-                .toList();
-        return user;
-
+        // TODO Auto-generated method stub
+        return null;
     }
 
 }

@@ -23,13 +23,8 @@ public class RolServiceImpl implements RolService {
 
     @Override
     public List<Integer> getRolesByNombreRol(String nombre) {
-        List<Rol> roles = (List<Rol>) rr.findAll();
-        List<Integer> idRol = roles
-                .stream()
-                .filter(rol -> rol.getNombre_rol().equals(nombre))
-                .map(Rol::getId_rol)
-                .toList();
-        return idRol;
+        // TODO Auto-generated method stub
+        return null;
     }
 
 }

@@ -5,12 +5,12 @@ import java.sql.ResultSet;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-import com.alexis.proyecto.gestionusuariosroles.connector.Connector;
+import com.alexis.proyecto.gestionusuariosroles.connector.ConnectorExample;
 
 @SpringBootTest
 public class TestConnector {
 
-    private Connection connection = Connector.getConnection();
+    private Connection connection = ConnectorExample.getConnection();
 
     @Test
     public void TestDeConexion() {

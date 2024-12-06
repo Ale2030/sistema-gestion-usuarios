@@ -1,4 +1,4 @@
-package com.alexis.proyecto.gestionusuariosroles.connector;
+package com.alexis.proyecto.gestionusuariosroles.connectors;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

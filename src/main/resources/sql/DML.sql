@@ -2,7 +2,7 @@
 INSERT INTO usuarios (nombre, email, password, activo)
 VALUES
     ('Juan Pérez', 'juan@example.com', '$2y$10$YBiQPUbhN7r31zUq61H6yO8QtjwU4PpN9qW4dqNvBNZuZwoedi0xy', TRUE),
-    ('Ana García', 'anagarcia@example.com', '$2y$10$dCbk.kavmoqWGL5Wr3d4FuL8KGTrRTAbp7yfUzNsiEKBpzxisXbsS', TRUE),
+    ('Ana García', 'anagarcia@example.com', '$2y$10$NkbD6PKMUWaazB6TR28.PeSLA.xn6ZXM.tHyihLJe1KYb1X71Xy.e', TRUE),
     ('Luis Martínez', 'luis.martinez@example.com', 'password1523', TRUE),
     ('María López', 'maria.lopez@example.com', 'password1273', TRUE),
     ('Carlos Sánchez', 'carlos.sanchez@example.com', 'password1823', TRUE),

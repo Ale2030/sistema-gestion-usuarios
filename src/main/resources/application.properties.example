@@ -1,9 +1,7 @@
-spring.application.name=Gestion de Usuarios y Roles
-
 # Configuración para BD
 spring.application.name=Gestion de Usuarios y Roles
 server.port=8080
 spring.datasource.url=jdbc:mariadb://localhost:3306/usuarios_y_roles_db
 spring.datasource.driver-class-name=org.mariadb.jdbc.Driver
-spring.datasource.username=
+spring.datasource.username=root
 spring.datasource.password=

@@ -1,11 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/card-style.css">
+    <link rel="stylesheet" href="/css/admin-style.css">
     <title>Inicio</title>
 </head>
+
 <body>
-    <h1>SOS ADMIN</h1>
+    <div>
+        <div th:insert="~{/card :: card}"></div>
+
+        <h1>Lista de Usuarios y Roles</h1>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Correo Electrónico</th>
+                        <th>Rol</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="user : ${users}" class="table-row">
+                        <th th:text="${user.idUsuario}"></th>
+                        <td th:text="${user.nombre}"></td>
+                        <td th:text="${user.email}"></td>
+                        <td style="text-transform: uppercase" th:each="u :  ${user.roles}" th:text="${u.nombreRol}"
+                            data-label="Rol"></td>
+                        <td class="actions">
+                            <button class="edit">Editar</button>
+                            <button class="delete">Eliminar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
 </body>
+
 </html>

@@ -15,8 +15,6 @@ public class UsuarioRolServiceImpl implements UsuarioRolService {
     @Autowired
     private UsuarioRolRepository urr;
 
-    @Autowired
-    private RolServiceImpl rsi;
 
     @Override
     public List<UsuarioRol> getUsuarioRolServices() {

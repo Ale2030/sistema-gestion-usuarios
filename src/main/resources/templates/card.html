@@ -1,0 +1,12 @@
+<div th:fragment="card">
+    <div class="card">
+        <img src="/img/usuario.png" alt="Image">
+        <div class="details">
+            <h2 th:text="'¡Hola! ' +${nombre}"></h2>
+            <p th:text="'Tu rol es: ' + ${rol}"></p>
+
+        </div>
+
+        <p id="info">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</p>
+    </div>
+</div>

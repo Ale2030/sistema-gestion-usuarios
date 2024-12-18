@@ -29,5 +29,7 @@ Este proyecto es un sistema de administración para gestionar usuarios y roles. 
 2. Cambia los valores al archivo application.properties.
 
 ## Diagrama ER
-Puedes consultar el diagrama ER del proyecto [aquí](docs/Diagrama de DER.png).
+
+Puedes consultar el diagrama ER del proyecto [aquí](docs/diagrama_DER.png).
+
 

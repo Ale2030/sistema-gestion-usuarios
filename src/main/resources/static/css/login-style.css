@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Red Rose', cursive;
+    background-color: #F5F5F5;
+}
+
+.login-card {
+    width: calc(100% - 40px);
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    background: white;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    text-align: center;
+}
+
+.login-card h1 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+input:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+.btn-submit {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #45a049;
+}
+
+.error-msg {
+    color: red;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+.logout-msg {
+    color: green;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+@media (max-width: 480px) {
+    .login-card {
+        padding: 15px;
+    }
+}
+
+@media (min-width: 768px) {
+    .login-card {
+        max-width: 500px;
+        padding: 30px;
+    }
+}

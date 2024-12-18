@@ -1,0 +1,125 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f9f9f9;
+    overflow-x: hidden; 
+}
+
+h1 {
+    padding-top: 20px;
+    position: relative;
+    transition: color 0.3s ease; 
+}
+
+h1::after {
+    content: '';
+    width: 0; 
+    height: 2px; 
+    background-color: #ffc107; 
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease; 
+}
+
+h1:hover {
+    color: #ffc107;
+}
+
+h1:hover::after {
+    width: 100%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+    word-wrap: break-word;
+}
+
+table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+table td {
+    color: black;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table tr:hover {
+    background-color: #a9e7ee; 
+    transition: background-color 0.3s ease;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto; 
+}
+
+.btn-volver {
+    background-color: #ffc107;
+    color: #fff;
+    border: none;
+    margin-top: 20px;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 6px;
+    transition: background-color 0.3s ease;
+    text-decoration: none; 
+    outline: none; 
+}
+
+.btn-volver:hover {
+    background-color: #e0a800;
+}
+
+@media (max-width: 768px) {
+    table th, table td {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .btn-volver {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    .btn-volver {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}
+
+@media (min-width: 1024px) {
+    table th, table td {
+        font-size: 16px;
+    }
+
+    .btn-volver {
+        font-size: 18px;
+        padding: 12px 24px;
+    }
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/log-auditoria-style.css">
+    <title>Auditoria</title>
+</head>
+
+<body>
+    <div>
+        <h1>Lista de Usuarios y Roles</h1>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Admin</th>
+                        <th>Accion</th>
+                        <th>Tabla</th>
+                        <th>Fecha</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="log : ${logs}" class="table-row">
+                        <th th:text="${log.idLog}"></th>
+                        </td>
+                        <td th:each="l :${log.usuario}" th:text="'Nombre: '+${l.nombre}+', Email: '+${l.email}"></td>
+                        <td th:text="${log.accion}"></td>
+                        <td th:text="${log.tablaAfectada}"></td>
+                        <td th:text="${log.fechaAccion}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <a href="javascript:history.back()" class="btn-volver">Volver</a>
+    </div>
+
+
+</body>
+
+</html>

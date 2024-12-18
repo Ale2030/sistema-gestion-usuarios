@@ -33,7 +33,7 @@ ALTER TABLE usuarios ADD CONSTRAINT unique_email UNIQUE (email);
 
 CREATE TABLE roles (
     id_rol INT AUTO_INCREMENT PRIMARY KEY,
-    nombre_rol VARCHAR(20) NOT NULL 
+    nombre_rol VARCHAR(20) NOT NULL
 );
 
 ALTER TABLE roles ADD CONSTRAINT unique_nombre_rol UNIQUE (nombre_rol);
@@ -53,10 +53,11 @@ ALTER TABLE usuarios_roles
 CREATE TABLE permisos(
     id_permiso INT AUTO_INCREMENT PRIMARY KEY,
     id_rol INT NOT NULL,
-    accion ENUM('CREATE', 'UPDATE', 'DELETE', 'READ') NOT NULL
+    accion ENUM('CREATE', 'UPDATE', 'DELETE') NOT NULL
 );
 ALTER TABLE permisos
     ADD CONSTRAINT fk_permisos_rol FOREIGN KEY (id_rol) REFERENCES roles(id_rol) ON DELETE CASCADE;
+
 CREATE TABLE logs_auditoria(
     id_log INT AUTO_INCREMENT PRIMARY KEY ,
     id_usuario INT NOT NULL,
@@ -64,6 +65,7 @@ CREATE TABLE logs_auditoria(
     tabla_afectada VARCHAR(100) NOT NULL,
     fecha_accion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
 ALTER TABLE logs_auditoria
     ADD CONSTRAINT fk_usuario_logs
     FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario)

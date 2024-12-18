@@ -1,5 +1,5 @@
 -- Esta consulta selecciona todos los usuarios activos.
-SELECT id_usuario, nombre, email, rol, activo
+SELECT id_usuario, nombre, email, activo
 FROM usuarios
 WHERE activo = TRUE;
 
@@ -22,14 +22,6 @@ SELECT la.id_log, u.nombre AS usuario, la.accion, la.tabla_afectada, la.fecha_ac
 FROM logs_auditoria la
 JOIN usuarios u ON la.id_usuario = u.id_usuario
 WHERE la.accion = 'UPDATE';
-
--- Esta consulta obtiene los usuarios que tienen más de un rol asignado, utilizando `JOIN` entre las tablas `usuarios`, `roles`, y `usuarios_roles`.
-SELECT u.id_usuario, u.nombre, GROUP_CONCAT(r.nombre_rol) AS roles
-FROM usuarios u
-JOIN usuarios_roles ur ON u.id_usuario = ur.id_usuario
-JOIN roles r ON ur.id_rol = r.id_rol
-GROUP BY u.id_usuario
-HAVING COUNT(r.id_rol) > 1;
 
 -- Esta consulta selecciona los usuarios junto con sus roles, excluyendo a los usuarios inactivos.
 -- Utiliza `JOIN` entre `usuarios`, `usuarios_roles`, y `roles`.

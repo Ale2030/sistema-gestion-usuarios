@@ -1,17 +1,12 @@
 -- Active: 1714186397700@@127.0.0.1@3306@usuarios_y_roles_db
 INSERT INTO usuarios (nombre, email, password, activo)
 VALUES
-    ('Juan Pérez', 'juan@example.com', '$2y$10$YBiQPUbhN7r31zUq61H6yO8QtjwU4PpN9qW4dqNvBNZuZwoedi0xy', TRUE),
-    ('Ana García', 'anagarcia@example.com', '$2y$10$NkbD6PKMUWaazB6TR28.PeSLA.xn6ZXM.tHyihLJe1KYb1X71Xy.e', TRUE),
-    ('Luis Martínez', 'luis.martinez@example.com', 'password1523', TRUE),
-    ('María López', 'maria.lopez@example.com', 'password1273', TRUE),
-    ('Carlos Sánchez', 'carlos.sanchez@example.com', 'password1823', TRUE),
-    ('Laura Fernández', 'laura.fernandez@example.com', 'password123', TRUE),
-    ('Pedro Díaz', 'pedro.diaz@example.com', 'password1023', TRUE),
-    ('Elena Rodríguez', 'elena.rodriguez@example.com', 'password1823', TRUE),
-    ('José González', 'jose.gonzalez@example.com', 'password14523', TRUE),
-    ('Sandra Martínez', 'sandra.martinez@example.com', 'password13523', TRUE);
-
+    ('Juan Pérez', 'juan@example.com', '$2y$10$4MfLPH4318loXxFD/MTbKuaqcniOvzuxXMRWOj.jFh71b8JoKtdd.', TRUE),
+    ('Ana García', 'anagarcia@example.com', '$2y$10$9AsBX9vV6SPQhtjm.13fr.82nWKAFyT2h8bg2k2kT63aM8Klys7TC', TRUE),
+    ('Luis Martínez', 'luis.martinez@example.com', '$2y$10$QFafoilcopk8kJg7gdJ7Yu8ZOaayABGbv4zvSEn5TqhJ7L.d7O9Jy', TRUE),
+    ('María López', 'maria.lopez@example.com', '$2y$10$b1rRzayKlVN9rIug7oBneuI0G.xDAgmuMSMr87egpMeyoY9F15sXa', TRUE),
+    ('Carlos Sánchez', 'carlos.sanchez@example.com', '$2y$10$5854dqVhSU5AjCjAnTGXk.OsMSAriS0n5t/r.miOBzz1ty5A7u6ti', TRUE);
+    
 -- Insertar roles
 INSERT INTO roles (nombre_rol)
 VALUES
@@ -23,12 +18,7 @@ INSERT INTO permisos (id_rol, accion)
 VALUES
     (1, 'CREATE'),
     (1, 'UPDATE'),
-    (1, 'DELETE'),
-    (1, 'READ'),
-    (2, 'READ'),
-    (2, 'UPDATE'),
-    (2, 'CREATE'),
-    (2, 'DELETE');
+    (1, 'DELETE');
 
 -- Insertar usuario_rol (relación entre usuarios y roles)
 INSERT INTO usuarios_roles (id_usuario, id_rol)
@@ -37,27 +27,11 @@ VALUES
     (2, 2),
     (3, 2),  
     (4, 2),
-    (5, 1),
-    (6, 2), 
-    (7, 2),
-    (8, 1), 
-    (9, 2),  
-    (10, 2); 
+    (5, 1);
+   
 
 -- Insertar logs de auditoría
 INSERT INTO logs_auditoria (id_usuario, accion, tabla_afectada)
 VALUES
     (1, 'CREATE', 'usuarios'),
-    (2, 'UPDATE', 'usuarios'),
-    (3, 'DELETE', 'usuarios'),
-    (4, 'CREATE', 'roles'),
-    (5, 'UPDATE', 'roles'),
-    (6, 'DELETE', 'roles'),
-    (7, 'CREATE', 'usuarios'),
-    (8, 'UPDATE', 'usuarios'),
-    (9, 'DELETE', 'usuarios'),
-    (10, 'CREATE', 'usuarios'),
-    (1, 'UPDATE', 'usuarios'),
-    (5, 'DELETE', 'roles'),
-    (8, 'READ', 'usuarios'),
-    (9, 'UPDATE', 'usuarios');
+    (5, 'UPDATE', 'usuarios');

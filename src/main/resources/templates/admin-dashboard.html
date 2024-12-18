@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/card-style.css">
     <link rel="stylesheet" href="/css/admin-style.css">
+    <link rel="stylesheet" href="/css/modal.css">
     <title>Inicio</title>
 </head>
 
 <body>
     <div>
         <div th:insert="~{/card :: card}"></div>
-
         <h1>Lista de Usuarios y Roles</h1>
         <div class="table-container">
             <table>
@@ -31,17 +31,33 @@
                         <td th:text="${user.nombre}"></td>
                         <td th:text="${user.email}"></td>
                         <td style="text-transform: uppercase" th:each="u :  ${user.roles}" th:text="${u.nombreRol}"
-                            data-label="Rol"></td>
+                            data-label="Rol">
+                        </td>
                         <td class="actions">
-                            <button class="edit">Editar</button>
-                            <button class="delete">Eliminar</button>
+                            <button class="edit">
+                                <a th:href="@{'/usuario/admin/edit-user/' + ${user.idUsuario}}">Editar</a>
+                            </button>
+
+                            <form class="deleteUserForm" th:action="@{/usuario/remove}" method="post">
+                                <input type="hidden" name="_method" value="delete" />
+                                <input type="hidden" th:value="${user.idUsuario}" name="idUsuario">
+                                <button type="button" class="delete">Eliminar</button>
+                            </form>
                         </td>
                     </tr>
                 </tbody>
             </table>
         </div>
+        <!--Modal-->
+        <div id="confirmModal" class="modal">
+            <div class="modal-content">
+                <p id="confirmMessage" style="color: red;">¿Estás seguro de que deseas eliminar este usuario?</p>
+                <button id="confirmYes" class="confirm-btn">Sí</button>
+                <button id="confirmNo" class="confirm-btn">No</button>
+            </div>
+        </div>
     </div>
-
+    <script src="/js/popup-eliminar.js"></script>
 </body>
 
 </html>

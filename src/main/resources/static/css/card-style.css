@@ -49,6 +49,19 @@ body {
 .card .details p {
     font-weight: 300;
 }
+.logout-btn {
+    color: white;
+    background-color: red;
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.logout-btn:hover {
+    background-color: darkred;
+}
+
 @media (max-width: 320px) {
     .card {
         width: 100vw;

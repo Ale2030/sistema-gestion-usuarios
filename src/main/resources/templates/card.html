@@ -4,9 +4,28 @@
         <div class="details">
             <h2 th:text="'¡Hola! ' +${nombre}"></h2>
             <p th:text="'Tu rol es: ' + ${rol}"></p>
+            <div th:if="${rol == 'ADMIN'}">
+                <p id="info">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                    ut.</p>
+                <div>
+                    <a href="/usuario/logout" class="logout-btn">Cerrar Sesión</a>
+                </div>
+                <div class="buttons-container">
+                    <button class="buttons create-user">
+                        <a th:href="@{/usuario/admin/create-user}">Crear Usuario</a>
+                    </button>
+                    <button class="buttons audit">
+                        <a th:href="@{/usuario/admin/auditoria}">Auditoria</a>
+                    </button>
+                </div>
 
+            </div>
+            <p th:if="${rol == 'USER'}">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam, animi officia! Incidunt autem
+                assumenda sed.
+            </p>
         </div>
 
-        <p id="info">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</p>
+
     </div>
 </div>

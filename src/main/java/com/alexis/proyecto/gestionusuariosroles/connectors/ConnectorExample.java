@@ -3,6 +3,11 @@ package com.alexis.proyecto.gestionusuariosroles.connectors;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
+/**
+ * Clase que representa un conector a la BD
+ * permite establecer una conexion a la BD
+ * @author Alex
+ */
 public class ConnectorExample {
 
     private static String url = "jdbc:mariadb://example.com:3306/database_name";

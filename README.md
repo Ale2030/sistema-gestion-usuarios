@@ -30,6 +30,6 @@ Este proyecto es un sistema de administración para gestionar usuarios y roles. 
 
 ## Diagrama ER
 
-Puedes consultar el diagrama ER del proyecto [aquí](docs/diagrama_DER.png).
+Puedes consultar el diagrama ER del proyecto [aquí](docs/Diagrama_DER.png).
 
 

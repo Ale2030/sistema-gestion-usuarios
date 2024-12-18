@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/config-user-style.css">
+    <link rel="stylesheet" href="/css/modal.css">
+    <title>Actualizar Usuario</title>
+</head>
+
+<body>
+    <div class="card">
+        <h1>Editar Usuario</h1>
+        <form class="editUserForm" th:action="@{/usuario/admin/edit-user/{idUsuario}(idUsuario=${user.idUsuario})}"
+            method="post">
+            <input type="hidden" name="_method" value="PATCH">
+            <!--Nombre -->
+            <div>
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" id="edit-nombre" th:value="${user.nombre}" required>
+            </div>
+            <!--Emai -->
+            <div>
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" name="email" id="edit-email" th:value="${user.email}" required>
+            </div>
+            <!-- Botones -->
+            <div class="buttons">
+                <button type="submit" class="confirm-btn edit">Guardar</button>
+                <button type="reset" class="cancel-btn ">Cancelar</button>
+            </div>
+        </form>
+        <!--Modal-->
+        <div id="confirmModal" class="modal">
+            <div class="modal-content">
+                <p id="confirmMessage">¿Estás seguro de que deseas editar este usuario?</p>
+                <button id="confirmYes" class="confirm-btn">Sí</button>
+                <button id="confirmNo" class="confirm-btn">No</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/popup-editar.js"></script>
+</body>
+
+</html>

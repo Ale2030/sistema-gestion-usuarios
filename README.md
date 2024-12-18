@@ -7,7 +7,7 @@ Este proyecto es un sistema de administración para gestionar usuarios y roles. 
 - **Gestión de usuarios**: Crear, editar y eliminar usuarios con diferentes roles y permisos.
 - **Roles y permisos**: Los usuarios pueden tener distintos niveles de acceso según el rol que se les asigne.
 - **Autenticación y seguridad**: Implementación de inicio de sesión seguro con contraseñas encriptadas.
-- **Auditoría**: Registro de todas las acciones realizadas por los usuarios para garantizar la trazabilidad de las modificaciones.
+- **Auditoría**: Registro de todas las acciones realizadas por los administradores para garantizar la trazabilidad de las modificaciones.
 
 ## Tecnologías utilizadas
 
@@ -17,7 +17,7 @@ Este proyecto es un sistema de administración para gestionar usuarios y roles. 
   - MySQL para la base de datos
   - JPA (Java Persistence API) para la interacción con la base de datos
 - **Frontend**: 
-  - 
+  -  CSS para los estilos
   
 ## Instalación
 
@@ -25,8 +25,9 @@ Este proyecto es un sistema de administración para gestionar usuarios y roles. 
 
    ```bash
    git clone https://github.com/Ale2030/sistema-gestion-usuarios.git
-2. Cambia los valores a los archivos application.properties.
+
+2. Cambia los valores al archivo application.properties.
 
 ## Diagrama ER
-Puedes consultar el diagrama ER del proyecto [aquí](docs/diagrama-er.png).
+Puedes consultar el diagrama ER del proyecto [aquí](docs/Diagrama de DER.png).
 

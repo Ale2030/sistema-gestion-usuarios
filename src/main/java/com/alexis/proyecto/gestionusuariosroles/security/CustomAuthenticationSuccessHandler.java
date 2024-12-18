@@ -10,10 +10,18 @@ import org.springframework.stereotype.Component;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-
+/**
+ * Clase que redirecciona al {@link Usuario} segun su {@link Rol} implementando,
+ * la interface {@link AuthenticationSuccessHandler} 
+ * @author Alex
+ */
 @Component
 public class CustomAuthenticationSuccessHandler implements AuthenticationSuccessHandler {
 
+    /**
+     * Este metodo se ejecuta luego de que el usuario haya iniciado sesion y lo rdireccionara,
+     * a una vista segun su {@link Rol}
+     */
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
             Authentication authentication) throws IOException, ServletException {
@@ -23,7 +31,7 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
         } else if (authentication.getAuthorities().contains(new SimpleGrantedAuthority("user"))) {
             response.sendRedirect("usuario/dashboard");
         } else {
-            response.sendRedirect("/index");
+            response.sendRedirect("/access-denied");
         }
 
     }

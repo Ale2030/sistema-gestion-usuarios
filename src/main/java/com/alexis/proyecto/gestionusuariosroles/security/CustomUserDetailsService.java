@@ -6,6 +6,7 @@ import com.alexis.proyecto.gestionusuariosroles.repositories.UsuarioRepository;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -16,18 +17,30 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
-
+/**
+* Servicio para gestionar el inicio sesion del usuario y asignarle su autorizacion
+* @author Alex
+*/
 @AllArgsConstructor
 @Service
 
 public class CustomUserDetailsService implements UserDetailsService {
 
+        @Autowired
         private UsuarioRepository ur;
 
+        /**
+         * Metodo construye un objeto {@link User} que contiene el
+         * nombre, contraseña y su rol asociado al {@link Usuario}.
+         * 
+         * @param email correo elenctronico del usuario.
+         * @return Un objeto {@link UserDetail} con el usuario y su autorizacion.
+         */
         @Transactional
         @Override
         public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
                 Usuario usuario = ur.findByEmail(email)
+                                .filter(Usuario::getActivo)
                                 .orElseThrow(() -> new UsernameNotFoundException(
                                                 "Usuario no encontrado con email: " + email));
 

@@ -24,8 +24,8 @@ Este proyecto es un sistema de administración para gestionar usuarios y roles. 
 1. Clona este repositorio:
 
    ```bash
-   git clone https://github.com/tu-usuario/nombre-del-repositorio.git
-2. Cambia los valores a los archivos application.properties,Connector.java.
+   git clone https://github.com/Ale2030/sistema-gestion-usuarios.git
+2. Cambia los valores a los archivos application.properties.
 
 ## Diagrama ER
 Puedes consultar el diagrama ER del proyecto [aquí](docs/diagrama-er.png).
